@@ -36,6 +36,9 @@ app.listen(PORT, () => {
     console.log('servidor rodando em http://localhost:${PORT}');
 });
 
+const cors = require('cors');
+app.use(cors()); 
+
 const db = new sqlite3.database('./meubanco.db', (err) => {
     if (err) {
         console.erro("erro ao conectar ao banco:", err.menssage);
